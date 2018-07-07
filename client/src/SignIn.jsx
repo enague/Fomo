@@ -84,6 +84,7 @@ class SignIn extends React.Component {
 										</label>
 									</div>
 									<button
+										style={{ float: "right" }}
 										type="submit"
 										className="btn btn-primary"
 									>
@@ -91,15 +92,7 @@ class SignIn extends React.Component {
 									</button>
 								</form>
 							</div>
-							<div className="modal-footer">
-								<button
-									type="button"
-									className="btn btn-secondary"
-									data-dismiss="modal"
-								>
-									Close
-								</button>
-							</div>
+							<div className="modal-footer" />
 						</div>
 					</div>
 				</div>

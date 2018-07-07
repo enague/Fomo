@@ -25,7 +25,11 @@ class Event extends React.Component {
 							{this.props.detail.name.text}
 						</h5>
 
-						<button href="#" className="btn btn-primary">
+						<button
+							href="#"
+							className="btn btn-primary"
+							onClick={() => this.props.render(this.props.index)}
+						>
 							Get More Info
 						</button>
 					</div>

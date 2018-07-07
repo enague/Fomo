@@ -8,7 +8,7 @@ class Description extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<div style={{ padding: "30px" }}>
 				<div className="container">
 					<div className="row">
 						<div className="col-sm-6">

@@ -10,15 +10,29 @@ import Columns from "./Columns.jsx";
 import EventListings from "./EventListings.jsx";
 import Footer from "./Footer.jsx";
 import Description from "./Description.jsx";
+import EventDetails from "./EventDetails.jsx";
 
 const Body = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	font-family: Arial;
 
 	h1 {
 		color: #89c6e5;
 		font-family: Shrikhand, cursive;
+	}
+
+	h2 {
+		color: #533a71;
+		font-size: 25px;
+		font-family: monospace;
+	}
+
+	h3 {
+		color: #533a71;
+		font-size: 20px;
+		font-family: monospace;
 	}
 `;
 
@@ -30,9 +44,12 @@ class App extends React.Component {
 			carousel: true,
 			description: true,
 			columns: true,
-			eventlisting: false
+			eventlisting: false,
+			eventdetails: false,
+			index: ""
 		};
 		this.getEventInfo = this.getEventInfo.bind(this);
+		this.renderEventPage = this.renderEventPage.bind(this);
 	}
 
 	componentDidMount() {}
@@ -52,7 +69,20 @@ class App extends React.Component {
 					columns: false,
 					eventlisting: true
 				});
+				if (this.state.eventdetails) {
+					this.setState({
+						eventdetails: false
+					});
+				}
 			});
+	}
+
+	renderEventPage(index) {
+		this.setState({
+			index: index,
+			eventdetails: true,
+			eventlisting: false
+		});
 	}
 
 	render() {
@@ -65,7 +95,15 @@ class App extends React.Component {
 					{this.state.description ? <Description /> : null}
 					{this.state.columns ? <Columns /> : null}
 					{this.state.eventlisting ? (
-						<EventListings events={this.state.events} />
+						<EventListings
+							renderEventPage={this.renderEventPage}
+							events={this.state.events}
+						/>
+					) : null}
+					{this.state.eventdetails ? (
+						<EventDetails
+							event={this.state.events[this.state.index]}
+						/>
 					) : null}
 				</Body>
 				<Footer />

@@ -32,6 +32,7 @@ class Nav extends React.Component {
 							fontSize: "50px",
 							color: "#F48733"
 						}}
+						onClick={() => location.reload()}
 						className="navbar-brand"
 						href="#"
 					>
@@ -104,7 +105,7 @@ class Nav extends React.Component {
 								className="form-control mr-sm-2"
 								type="search"
 								onChange={e => this.handleChange(e)}
-								placeholder="Search events by city..."
+								placeholder="Search events..."
 								aria-label="Search"
 							/>
 						</form>

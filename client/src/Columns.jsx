@@ -1,19 +1,54 @@
 import React from "react";
+import axios from "axios";
 import styled from "styled-components";
 
 const Card = styled.div`
 	background: #f7f7f7;
 `;
 
+const Quote = styled.div`
+	color: #f48733;
+	font-size: 30px;
+	font-family: cursive;
+	margin-bottom: 30px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+`;
+
 class Columns extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {};
+		this.state = {
+			quote: "",
+			author: ""
+		};
+		this.getQuote = this.getQuote.bind(this);
+	}
+
+	componentDidMount() {
+		this.getQuote();
+	}
+
+	getQuote() {
+		axios
+			.get("/quote")
+			.then(results =>
+				this.setState({
+					quote: results.data.quoteText,
+					author: results.data.quoteAuthor
+				})
+			)
+			.catch(error => console.log(error));
 	}
 
 	render() {
 		return (
-			<div>
+			<div style={{ padding: "30px" }}>
+				<Quote>
+					{this.state.quote}
+					<h3>{this.state.author}</h3>
+				</Quote>
 				<div className="container">
 					<div className="row">
 						<div className="col">
