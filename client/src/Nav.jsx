@@ -73,7 +73,7 @@ class Nav extends React.Component {
 							</li>
 							<li className="nav-item dropdown">
 								<a
-									className="nav-link dropdown-toggle"
+									className="nav-link "
 									href="#"
 									id="navbarDropdown"
 									role="button"
@@ -83,21 +83,6 @@ class Nav extends React.Component {
 								>
 									<i className="fas fa-calendar-alt fa-lg" />
 								</a>
-								<div
-									className="dropdown-menu"
-									aria-labelledby="navbarDropdown"
-								>
-									<a className="dropdown-item" href="#">
-										Events
-									</a>
-									<a className="dropdown-item" href="#">
-										Meetups
-									</a>
-									<div className="dropdown-divider" />
-									<a className="dropdown-item" href="#">
-										Parties
-									</a>
-								</div>
 							</li>
 						</ul>
 						<form className="form-inline my-2 my-lg-0">

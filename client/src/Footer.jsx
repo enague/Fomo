@@ -25,27 +25,29 @@ class Footer extends React.Component {
 				<div className="container">
 					<div className="row">
 						<Contacts className="col-sm-5">
-							<a>Use Eventbrite</a>
+							<h3 style={{ color: "#f48733" }}> ABOUT </h3>
+							<a>Use Fomo</a>
 							<a>How It Works</a>
 							<a>For Large & Complex Events</a>
 							<a>Pricing</a>
 							<a>Content Standards</a>
-							<a>Eventbrite Mobile App</a>
-							<a>Eventbrite Check-In App</a>
-							<a>Eventbrite Spectrum</a>
+							<a> Fomo Mobile App</a>
+							<a> Fomo Check-In App</a>
+							<a> Fomo Spectrum</a>
 							<a>Rally - Fun Things To Do</a>
 							<a>FAQs</a>
 							<a>Sitemap</a>
 						</Contacts>
 						<Contacts className="col-sm-5">
-							<a>Use Eventbrite</a>
+							<h3 style={{ color: "#f48733" }}> DISCOVER</h3>
+							<a>Use Fomo</a>
 							<a>How It Works</a>
 							<a>For Large & Complex Events</a>
 							<a>Pricing</a>
 							<a>Content Standards</a>
-							<a>Eventbrite Mobile App</a>
-							<a>Eventbrite Check-In App</a>
-							<a>Eventbrite Spectrum</a>
+							<a> Fomo Mobile App</a>
+							<a> Fomo Check-In App</a>
+							<a> Fomo Spectrum</a>
 							<a>Rally - Fun Things To Do</a>
 							<a>FAQs</a>
 							<a>Sitemap</a>

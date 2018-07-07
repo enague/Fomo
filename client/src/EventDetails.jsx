@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 // import EventMap from "./EventMap.jsx";
 import Choice from "./Choice.jsx";
+import ReactTooltip from "react-tooltip";
 
 class EventDetails extends React.Component {
 	constructor(props) {
@@ -24,14 +25,47 @@ class EventDetails extends React.Component {
 				<div style={{ display: "flex", padding: "5px" }}>
 					<div>
 						{this.props.event.is_free ? (
-							<i className="fab fa-creative-commons-nc fa-2x" />
+							<div>
+								<a data-tip data-for="free">
+									<i className="fab fa-creative-commons-nc fa-2x" />
+								</a>
+								<ReactTooltip
+									id="free"
+									type="dark"
+									effect="float"
+								>
+									<span>Free Event</span>
+								</ReactTooltip>
+							</div>
 						) : (
-							<i className="fas fa-dollar-sign fa-2x" />
+							<div>
+								<a data-tip data-for="pay">
+									<i className="fas fa-dollar-sign fa-2x" />
+								</a>
+								<ReactTooltip
+									id="pay"
+									type="dark"
+									effect="float"
+								>
+									<span>Not Free</span>
+								</ReactTooltip>
+							</div>
 						)}
 					</div>
 					<div>
 						{this.props.event.online_event ? (
-							<i className="fas fa-laptop fa-2x" />
+							<div>
+								<a data-tip data-for="laptop">
+									<i className="fas fa-laptop fa-2x" />
+								</a>
+								<ReactTooltip
+									id="laptop"
+									type="dark"
+									effect="float"
+								>
+									<span>Online Event</span>
+								</ReactTooltip>
+							</div>
 						) : null}
 					</div>
 				</div>
