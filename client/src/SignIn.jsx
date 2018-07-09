@@ -64,25 +64,19 @@ class SignIn extends React.Component {
 							</div>
 							{this.state.signIn ? (
 								<div className="modal-body">
-									<form>
+									<form action="/login" method="post">
 										<div className="form-group">
 											<label htmlFor="exampleInputEmail1">
 												Email address
 											</label>
 											<input
-												type="email"
+												type="text"
+												name="username"
 												className="form-control"
 												id="exampleInputEmail1"
 												aria-describedby="emailHelp"
 												placeholder="Enter email"
 											/>
-											<small
-												id="emailHelp"
-												className="form-text text-muted"
-											>
-												We'll never share your email
-												with anyone else.
-											</small>
 										</div>
 										<div className="form-group">
 											<label htmlFor="exampleInputPassword1">
@@ -90,19 +84,22 @@ class SignIn extends React.Component {
 											</label>
 											<input
 												type="password"
+												name="password"
 												className="form-control"
 												id="exampleInputPassword1"
 												placeholder="Password"
 											/>
 										</div>
 
-										<button
+										<a
+											href="/auth/google"
 											style={{ float: "right" }}
 											type="submit"
+											value="Log In"
 											className="btn btn-primary"
 										>
 											Submit
-										</button>
+										</a>
 									</form>
 								</div>
 							) : null}

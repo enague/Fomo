@@ -2,6 +2,16 @@ import React from "react";
 import axios from "axios";
 import styled from "styled-components";
 
+const Body = styled.div`
+	button {
+		background: black;
+		color: white;
+		height: 40px;
+		width: 300px;
+		cursor: pointer;
+	}
+`;
+
 const Answer = styled.div`
 	font-size: 50px;
 	color: #f48733;
@@ -21,6 +31,7 @@ class Choice extends React.Component {
 			present: false
 		};
 		this.getChoice = this.getChoice.bind(this);
+		this.saveEvent = this.saveEvent.bind(this);
 	}
 
 	getChoice() {
@@ -33,17 +44,32 @@ class Choice extends React.Component {
 		});
 	}
 
+	saveEvent(event) {
+		axios
+			.post("/add/event", {
+				params: {
+					value: event
+				}
+			})
+			.then(data => {
+				console.log("saved successfully!");
+			})
+			.catch(err => {
+				console.log(err);
+			});
+	}
+
 	render() {
 		return (
-			<div className="row">
+			<Body className="row">
 				<div className="col-sm-4">
-					<h2>Feeling Indecisive? </h2>
+					<h2 style={{ marginTop: "30px" }}>Feeling Indecisive? </h2>
 
-					<button
-						onClick={() => this.getChoice()}
-						className="btn btn-primary"
-					>
+					<button onClick={() => this.getChoice()}>
 						Let FOMO help you decide
+					</button>
+					<button onClick={() => this.saveEvent(this.props.event)}>
+						Save Event
 					</button>
 					<Answer>{this.state.answer}</Answer>
 					<Suggestion>
@@ -68,7 +94,7 @@ class Choice extends React.Component {
 						/>
 					) : null}
 				</div>
-			</div>
+			</Body>
 		);
 	}
 }

@@ -75,7 +75,7 @@ class EventDetails extends React.Component {
 				<a href={this.props.event.url}>{this.props.event.url} </a>
 
 				<div>{this.props.event.description.text}</div>
-				<Choice />
+				<Choice event={this.props.event} />
 			</div>
 		);
 	}
