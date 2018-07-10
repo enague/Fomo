@@ -24,7 +24,10 @@ class Nav extends React.Component {
 
 	render() {
 		return (
-			<div className="navbar navbar-expand-lg bg-dark">
+			<div
+				style={{ background: "black" }}
+				className="navbar navbar-expand-lg "
+			>
 				<Body className="container">
 					<a
 						style={{

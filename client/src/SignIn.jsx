@@ -93,10 +93,14 @@ class SignIn extends React.Component {
 
 										<a
 											href="/auth/google"
-											style={{ float: "right" }}
+											style={{
+												float: "right",
+												color: "black",
+												background: "#428bca"
+											}}
 											type="submit"
-											value="Log In"
 											className="btn btn-primary"
+											value="Log In"
 										>
 											Submit
 										</a>

@@ -3,6 +3,9 @@ import styled from "styled-components";
 import axios from "axios";
 import config from "../../config.js";
 import Transition from "react-transition-group/Transition";
+import { BrowserRouter as Router, Link, Route } from "react-router-dom";
+// import { Route } from "react-router-dom";
+
 import Nav from "./Nav.jsx";
 import SignIn from "./SignIn.jsx";
 import Carousel from "./Carousel.jsx";
@@ -11,6 +14,7 @@ import EventListings from "./EventListings.jsx";
 import Footer from "./Footer.jsx";
 import Description from "./Description.jsx";
 import EventDetails from "./EventDetails.jsx";
+import Profile from "./Profile.jsx";
 
 const Body = styled.div`
 	display: flex;
@@ -88,6 +92,14 @@ class App extends React.Component {
 	render() {
 		return (
 			<div>
+				<Router>
+					<Route
+						path="/profile/"
+						render={() => {
+							return <h1>hi from profile</h1>;
+						}}
+					/>
+				</Router>
 				<Nav getEventInfo={this.getEventInfo} />
 				<SignIn />
 				{this.state.carousel ? <Carousel /> : null}
